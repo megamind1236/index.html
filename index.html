@@ -905,7 +905,7 @@
           </div>
           <div class="venue-card anim-item">
             <div class="venue-label">Venue</div>
-            <div id="viewShadiVenue" class="venue-text">Ajmal Town<br />Street No. 1</div>
+            <div id="viewShadiVenue" class="venue-text">Ajmal Town<br />Sadiqabad</div>
             <div class="venue-actions">
               <a id="mapShadi" class="venue-action-btn" target="_blank" rel="noopener" href="#">
                 <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
@@ -978,7 +978,7 @@
         mehndiDate: "2026-12-11T18:00",
         mehndiVenue: "Urooj Marriage Hall, Manthar Road, SDK",
         shadiDate: "2026-12-12T10:30",
-        shadiVenue: "Ajmal Town, Street No. 1",
+        shadiVenue: "Ajmal Town, Sadiqabad",
         walimaDate: "2026-12-13T19:00",
         walimaVenue: "Siraj Marquee, Manthar Road, SDK"
       };
@@ -1081,8 +1081,9 @@
           }
         });
 
+        // Maps: Mehndi & Walima use text search, Barat uses exact coordinates
         document.getElementById("mapMehndi").href = buildMapUrl(inviteData.mehndiVenue);
-        document.getElementById("mapShadi").href = buildMapUrl(inviteData.shadiVenue);
+        document.getElementById("mapShadi").href = "https://www.google.com/maps/search/?api=1&query=28.295288,70.133468";
         document.getElementById("mapWalima").href = buildMapUrl(inviteData.walimaVenue);
 
         document.getElementById("calMehndi").addEventListener("click", () => {
@@ -1215,7 +1216,7 @@
       });
 
       /* ----------------------------------------------------------------------
-         AUDIO — RELAXING WEDDING MELODY (Web Audio API, no external files)
+         AUDIO — RELAXING WEDDING MELODY (Web Audio API)
          ---------------------------------------------------------------------- */
       let audioCtx = null;
       let audioEnabled = false;
